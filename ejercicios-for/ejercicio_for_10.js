@@ -1,3 +1,20 @@
-// Ejercicio For 10: Validador de Palíndromos
-// Implementa un programa que use un ciclo for para verificar si una palabra o frase es un palíndromo. 
-// Debe ignorar espacios, mayúsculas y signos de puntuación.
+const textoOriginal = "Anita lava la tina";
+
+const texto = textoOriginal.toLowerCase().replace(/\s+/g, '');
+
+let esPalindromo = true;
+const longitud = texto.length;
+
+for (let i = 0; i < longitud / 2; i++) {
+  if (texto[i] !== texto[longitud - 1 - i]) {
+    esPalindromo = false;
+    break;
+  }
+}
+
+console.log(`Texto original: "${textoOriginal}"`);
+if (esPalindromo) {
+  console.log("Es un palíndromo.");
+} else {
+  console.log("No es un palíndromo.");
+}
